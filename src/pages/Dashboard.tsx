@@ -44,7 +44,29 @@ export function Dashboard() {
         <h1 className="text-2xl font-bold text-maroon sm:text-3xl">
           {t("dashboard")}
         </h1>
-        <div className="mt-2 flex flex-wrap items-center gap-2 text-sm"><span className="rounded-full bg-maroon px-3 py-1 font-semibold text-white">{activeFilter === "today" ? t("today") : activeFilter === "week" ? t("thisWeek") : activeFilter === "month" ? t("thisMonth") : activeFilter === "year" ? t("thisYear") : t("allTime")}</span><span className="text-stone-500">{activeFilter === "all" ? t("completeHistory") : <>{format(new Date(range.from), "dd MMM yyyy")} – {format(new Date(range.to), "dd MMM yyyy")}</>}</span></div>
+        <div className="mt-2 flex flex-wrap items-center gap-2 text-sm">
+          <span className="rounded-full bg-maroon px-3 py-1 font-semibold text-white">
+            {activeFilter === "today"
+              ? t("today")
+              : activeFilter === "week"
+                ? t("thisWeek")
+                : activeFilter === "month"
+                  ? t("thisMonth")
+                  : activeFilter === "year"
+                    ? t("thisYear")
+                    : t("allTime")}
+          </span>
+          <span className="text-stone-500">
+            {activeFilter === "all" ? (
+              t("completeHistory")
+            ) : (
+              <>
+                {format(new Date(range.from), "dd MMM yyyy")} –{" "}
+                {format(new Date(range.to), "dd MMM yyyy")}
+              </>
+            )}
+          </span>
+        </div>
         <div className="-mx-3 mt-4 flex gap-2 overflow-x-auto px-3 pb-1 sm:mx-0 sm:flex-wrap sm:px-0">
           {[
             ["today", t("today")],
@@ -125,3 +147,5 @@ export function Dashboard() {
     </>
   );
 }
+
+//
