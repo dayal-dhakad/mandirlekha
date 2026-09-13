@@ -1,0 +1,14 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+@layer base { html { @apply overflow-x-hidden; } body { @apply m-0 min-w-[320px] overflow-x-hidden bg-cream text-ink antialiased; } button, input, select, textarea { @apply text-base; } button, a, select { -webkit-tap-highlight-color: transparent; } }
+@layer components {
+  .card { @apply rounded-2xl border border-amber-100 bg-white p-4 shadow-soft sm:p-5; }
+  .label { @apply mb-1.5 block text-sm font-semibold text-stone-700; }
+  .input { @apply w-full rounded-xl border border-stone-300 bg-white px-3.5 py-3 outline-none transition focus:border-saffron focus:ring-2 focus:ring-amber-100; }
+  .btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-xl bg-maroon px-4 py-3 font-semibold text-white transition hover:bg-red-900 disabled:opacity-50; }
+  .btn-secondary { @apply inline-flex items-center justify-center gap-2 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 font-semibold text-maroon hover:bg-amber-100; }
+}
+
+@supports (padding: max(0px)) {
+  .safe-bottom { padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+  .safe-top { padding-top: env(safe-area-inset-top); }
+}

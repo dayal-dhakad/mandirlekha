@@ -1,0 +1,21 @@
+{
+  "name": "MandirLekha",
+  "short_name": "MandirLekha",
+  "description": "Charbhuja Nath Temple and Dharamshala accounting register",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fffaf0",
+  "theme_color": "#7f1d1d",
+  "lang": "hi-IN",
+  "orientation": "any",
+  "categories": ["finance", "utilities"],
+  "icons": [
+    {
+      "src": "/branding/mandirlekha-logo.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
